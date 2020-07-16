@@ -140,7 +140,7 @@ export const exposeAsyncModules = async (modules: ExposedModuleConfig[]): Promis
         key,
         path: path ?? resolveModulePath(key, isPluginModule),
         url: url ?? TEMP_URL,
-        value,
+        value: value ?? {}, // support undefined exports within test stubs
       } as CompleteExposedModuleConfig)
   );
 
